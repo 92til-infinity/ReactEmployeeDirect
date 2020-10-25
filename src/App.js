@@ -21,7 +21,7 @@ function App() {
 
   function search(rows) {
     return rows.filter((row) =>
-      searchCol.some((column) => row[column].toString().lowerCase().indexOf(bar.toLowerCase()) > -1)
+      searchCol.some((column) => row[column].toString().toLowerCase().indexOf(bar.toLowerCase()) > -1)
       // row.firstName.toLowerCase().indexOf(bar) > -1 ||
       // row.lastName.toLowerCase().indexOf(bar) > - 1 ||
       // row.emailAddress.toLowerCase().indexOf(bar) > - 1 ||
