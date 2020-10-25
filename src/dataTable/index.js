@@ -5,13 +5,13 @@ export default function DT({ data }) {
 
     return (
         <table cellPadding={0} cellSpacing={0}>
-            <thead>
-                <tr>{data[0] && columns.map((heading) => <th>{heading}</th>)}</tr>
+            <thead class="border border-dark">
+                <tr class="border border-dark">{data[0] && columns.map((heading) => <th>{heading}</th>)}</tr>
             </thead>
             <tbody>
                 {data.map(row => <tr>
                     {
-                        columns.map(column => <td>{row[column]}</td>)
+                        columns.map(column => <td class="border border-dark">{row[column]}</td>)
                     }
                 </tr>
                 )}

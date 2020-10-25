@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
-// import './App.css';
+import './App.css';
 import DT from "./dataTable";
 
 require("es6-promise").polyfill();
@@ -32,12 +32,13 @@ function App() {
   const columns = data[0] && Object.keys(data[0])
   return (
     <div className="App">
-      <div>
+      <div class="btn-group" id="topDiv">
         <input type="text" value={bar} onChange={(e) => setBar(e.target.value)} placeholder="search for..." />
         {columns &&
           columns.map((column) => (
-            <label>
+            <label className="ml-2">
               <input
+                className="ml-2"
                 type="checkbox"
                 checked={searchCol.includes(column)}
                 onChange={(e) => {
@@ -53,7 +54,7 @@ function App() {
             </label>
           ))}
       </div>
-      <div><DT data={search(data)} /></div>
+      <div id="bottom"><DT data={search(data)} /></div>
     </div >
   );
 }
